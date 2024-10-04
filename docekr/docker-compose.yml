@@ -1,0 +1,13 @@
+services:
+  base_ros_image:
+    image: base_ros_image
+    build:
+      context: .
+      dockerfile: dockerfiles/base_ros.dockerfile
+
+  vlp16_lidar:
+    container_name: vlp16_lidar
+    build:
+      context: .
+      dockerfile: dockerfiles/vlp16_lidar.dockerfile
+    entrypoint: ./ros_ws/vlp16_lidar.sh
