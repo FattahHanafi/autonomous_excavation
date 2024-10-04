@@ -12,6 +12,7 @@ services:
       dockerfile: dockerfiles/bag.dockerfile
     entrypoint: ./ros_ws/bag.sh
     volumes:
+      - /dev/shm:/dev/shm
       - ./resources/bag/:/ros_ws/bag/
     depends_on:
       - vlp16_lidar
@@ -22,3 +23,25 @@ services:
       context: .
       dockerfile: dockerfiles/vlp16_lidar.dockerfile
     entrypoint: ./ros_ws/vlp16_lidar.sh
+    volumes:
+      - /dev/shm:/dev/shm
+
+  d455_realsense:
+    container_name: d455_realsense
+    build:
+      context: .
+      dockerfile: dockerfiles/realsense.dockerfile
+    entrypoint: ./ros_ws/d455_realsense.sh
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
+
+  d435_realsense:
+    container_name: d435_realsense
+    build:
+      context: .
+      dockerfile: dockerfiles/realsense.dockerfile
+    entrypoint: ./ros_ws/d435_realsense.sh
+    volumes:
+      - /dev/shm:/dev/shm
+    privileged: true
