@@ -5,6 +5,17 @@ services:
       context: .
       dockerfile: dockerfiles/base_ros.dockerfile
 
+  bag:
+    container_name: bag
+    build:
+      context: .
+      dockerfile: dockerfiles/bag.dockerfile
+    entrypoint: ./ros_ws/bag.sh
+    volumes:
+      - ./resources/bag/:/ros_ws/bag/
+    depends_on:
+      - vlp16_lidar
+
   vlp16_lidar:
     container_name: vlp16_lidar
     build:
