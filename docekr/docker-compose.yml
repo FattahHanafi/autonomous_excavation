@@ -45,3 +45,15 @@ services:
     volumes:
       - /dev/shm:/dev/shm
     privileged: true
+
+  zed2i_stereolabs:
+    container_name: zed2i_stereolabs
+    build:
+      context: .
+      dockerfile: dockerfiles/zed2i_stereolabs.dockerfile
+    entrypoint: ./ros_ws/zed2i_stereolabs.sh
+    volumes:
+      - /dev:/dev
+      - ./resources/zed/:/usr/local/zed/resources/
+    privileged: true
+    runtime: nvidia
