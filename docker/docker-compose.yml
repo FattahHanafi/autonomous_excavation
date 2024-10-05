@@ -58,6 +58,16 @@ services:
       - ./resources/zed/:/usr/local/zed/resources/
     privileged: true
     runtime: nvidia
+  
+  swiftnav_gps:
+    container_name: swiftnav_gps
+    build:
+      context: .
+      dockerfile: dockerfiles/swiftnav_gps.dockerfile
+    entrypoint: ./ros_ws/swiftnav_gps.sh
+    volumes:
+      - /dev/shm:/dev/shm
+    network_mode: host
 
   visualization:
     container_name: visualization

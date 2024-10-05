@@ -5,6 +5,7 @@ RUN apt-get install ros-$ROS_DISTRO-velodyne -y
 RUN apt-get install \
   ros-$ROS_DISTRO-librealsense2* \
   ros-$ROS_DISTRO-realsense2-* -y
+RUN apt-get install ros-$ROS_DISTRO-gps-msgs -y
 
 COPY ./entrypoints/visualization.sh /ros_ws/
 RUN chmod +x /ros_ws/visualization.sh

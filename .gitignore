@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Bag files
+docker/resources/*
+!*/.gitkeep
