@@ -25,6 +25,7 @@ services:
     entrypoint: ./ros_ws/vlp16_lidar.sh
     volumes:
       - /dev/shm:/dev/shm
+    network_mode: host
 
   d455_realsense:
     container_name: d455_realsense
