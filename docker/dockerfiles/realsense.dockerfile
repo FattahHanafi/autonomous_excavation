@@ -5,6 +5,6 @@ RUN apt-get install \
   ros-$ROS_DISTRO-realsense2-* -y
 
 COPY ./entrypoints/d455_realsense.sh /ros_ws/
-COPY ./entrypoints/d435_realsense.sh /ros_ws/
+COPY ./entrypoints/d415_realsense.sh /ros_ws/
 RUN chmod +x /ros_ws/d455_realsense.sh
-RUN chmod +x /ros_ws/d435_realsense.sh
+RUN chmod +x /ros_ws/d415_realsense.sh

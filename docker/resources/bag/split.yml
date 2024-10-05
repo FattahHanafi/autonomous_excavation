@@ -1,0 +1,35 @@
+# out.yaml
+output_bags:
+- uri: split1
+  storage_id: mcap
+  topics: [/camera/D455/infra/metadata]
+- uri: split2
+  storage_id: mcap
+  topics: [/camera/D455/extrinsics/depth_to_infra]
+- uri: split3
+  storage_id: mcap
+  topics: [/camera/D455/depth/camera_info]
+- uri: split4
+  storage_id: mcap
+  topics: [/camera/D455/depth/image_rect_raw]
+- uri: split5
+  storage_id: mcap
+  topics: [/camera/D455/color/metadata]
+- uri: split6
+  storage_id: mcap
+  topics: [/camera/D455/depth/color/points]
+- uri: split7
+  storage_id: mcap
+  topics: [/camera/D455/color/image_raw]
+- uri: split8
+  storage_id: mcap
+  topics: [/camera/D455/depth/metadata]
+- uri: split9
+  storage_id: mcap
+  topics: [/camera/D455/extrinsics/depth_to_color]
+- uri: split10
+  storage_id: mcap
+  topics: [/camera/D455/color/camera_info]
+- uri: split11
+  storage_id: mcap
+  topics: [/camera/D455/infra/image_rect_raw]
