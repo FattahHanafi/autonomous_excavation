@@ -34,3 +34,11 @@
 # Bag files
 docker/resources/*
 !*/.gitkeep
+
+# Ros2 directories
+*/build
+*/install
+*/log
+
+# Cache files
+*/.cache
