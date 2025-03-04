@@ -1,31 +1,31 @@
 services:
-  base_ros_image:
-    image: base_ros_image
-    build:
-      context: .
-      dockerfile: dockerfiles/base_ros.dockerfile
+  # base_ros_image:
+  #   image: base_ros_image
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/base_ros.dockerfile
 
-  bag:
-    container_name: bag
-    build:
-      context: .
-      dockerfile: dockerfiles/bag.dockerfile
-    entrypoint: ./ros_ws/bag.sh
-    volumes:
-      - /dev/shm:/dev/shm
-      - ./resources/bag/:/ros_ws/bag/
-    depends_on:
-      - vlp16_lidar
+  # bag:
+  #   container_name: bag
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/bag.dockerfile
+  #   entrypoint: ./ros_ws/bag.sh
+  #   volumes:
+  #     - /dev/shm:/dev/shm
+  #     - ./resources/bag/:/ros_ws/bag/
+  #   depends_on:
+  #     - vlp16_lidar
 
-  vlp16_lidar:
-    container_name: vlp16_lidar
-    build:
-      context: .
-      dockerfile: dockerfiles/vlp16_lidar.dockerfile
-    entrypoint: ./ros_ws/vlp16_lidar.sh
-    volumes:
-      - /dev/shm:/dev/shm
-    network_mode: host
+  # vlp16_lidar:
+  #   container_name: vlp16_lidar
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/vlp16_lidar.dockerfile
+  #   entrypoint: ./ros_ws/vlp16_lidar.sh
+  #   volumes:
+  #     - /dev/shm:/dev/shm
+  #   network_mode: host
 
   d455_realsense:
     container_name: d455_realsense
@@ -37,37 +37,37 @@ services:
       - /dev/shm:/dev/shm
     privileged: true
 
-  d435_realsense:
-    container_name: d415_realsense
-    build:
-      context: .
-      dockerfile: dockerfiles/realsense.dockerfile
-    entrypoint: ./ros_ws/d415_realsense.sh
-    volumes:
-      - /dev/shm:/dev/shm
-    privileged: true
+  # d415_realsense:
+  #   container_name: d415_realsense
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/realsense.dockerfile
+  #   entrypoint: ./ros_ws/d415_realsense.sh
+  #   volumes:
+  #     - /dev/shm:/dev/shm
+  #   privileged: true
 
-  zed2i_stereolabs:
-    container_name: zed2i_stereolabs
-    build:
-      context: .
-      dockerfile: dockerfiles/zed2i_stereolabs.dockerfile
-    entrypoint: ./ros_ws/zed2i_stereolabs.sh
-    volumes:
-      - /dev:/dev
-      - ./resources/zed/:/usr/local/zed/resources/
-    privileged: true
-    runtime: nvidia
-  
-  swiftnav_gps:
-    container_name: swiftnav_gps
-    build:
-      context: .
-      dockerfile: dockerfiles/swiftnav_gps.dockerfile
-    entrypoint: ./ros_ws/swiftnav_gps.sh
-    volumes:
-      - /dev/shm:/dev/shm
-    network_mode: host
+  # zed2i_stereolabs:
+  #   container_name: zed2i_stereolabs
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/zed2i_stereolabs.dockerfile
+  #   entrypoint: ./ros_ws/zed2i_stereolabs.sh
+  #   volumes:
+  #     - /dev:/dev
+  #     - ./resources/zed/:/usr/local/zed/resources/
+  #   privileged: true
+  #   runtime: nvidia
+
+  # swiftnav_gps:
+  #   container_name: swiftnav_gps
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/swiftnav_gps.dockerfile
+  #   entrypoint: ./ros_ws/swiftnav_gps.sh
+  #   volumes:
+  #     - /dev/shm:/dev/shm
+  #   network_mode: host
 
   visualization:
     container_name: visualization

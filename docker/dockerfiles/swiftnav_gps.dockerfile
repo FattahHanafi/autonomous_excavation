@@ -34,8 +34,8 @@ RUN apt-get install \
   unzip \
   curl -y
 RUN mkdir -p sonar && \
-    curl -sSLo sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux-x64.zip && \
-    unzip -o sonar/sonar-scanner.zip -d sonar/
+  curl -sSLo sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux-x64.zip && \
+  unzip -o sonar/sonar-scanner.zip -d sonar/
 
 ENV PATH="/ros_ws/sonar/sonar-scanner-${SONAR_SCANNER_VERSION}-linux-x64/bin:${PATH}"
 
