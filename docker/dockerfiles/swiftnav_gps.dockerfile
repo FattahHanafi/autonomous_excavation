@@ -1,4 +1,4 @@
-FROM ros:humble
+FROM ros:humble-ros-core-jammy
 
 ENV TZ=America/Toronto
 ENV ROS_DISTRO=humble
